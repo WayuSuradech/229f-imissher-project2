@@ -13,12 +13,7 @@ namespace Platformer
         private PlayerController player;
         public GameObject deathPlayerPrefab;
         public Text coinText;
-
-        void Start()
-        {
-            player = GameObject.Find("Player").GetComponent<PlayerController>();
-        }
-
+        
         void Update()
         {
             coinText.text = coinsCounter.ToString();
