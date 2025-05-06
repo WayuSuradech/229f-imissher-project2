@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -6,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     private float move;
     public float JumpForce;
     public bool IsJumping;
+    public int coinsCounter = 0;
+    public Text coinText;
     private bool facingRight = false;
     Rigidbody2D rb2d;
     Vector2 moveInput;
@@ -37,6 +42,7 @@ public class PlayerMove : MonoBehaviour
        {
             Flip();
        }
+       coinText.text = coinsCounter.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -60,5 +66,19 @@ public class PlayerMove : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            coinsCounter += 1;
+            Destroy(other.gameObject); 
+        }
+        if (other.gameObject.tag == "Enemy")
+        {
+            coinsCounter += 3;
+            Destroy(other.gameObject); // ทำลาย Enemy
+            Destroy(gameObject);       // ทำลาย Bullet ตัวเอง
+        }
     }
 }
