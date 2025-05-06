@@ -5,23 +5,37 @@ using UnityEngine.UI;
 public class Bullet : MonoBehaviour
 
 {
+    public AudioClip enemyHitSound;   // ใส่เสียงจาก Inspector
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // หาผู้เล่นเพื่อเพิ่มเหรียญ
+            // เล่นเสียง
+            if (audioSource != null && enemyHitSound != null)
+            {
+                audioSource.PlayOneShot(enemyHitSound);
+            }
+
+          
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
-                PlayerMove playerScript = player.GetComponent<PlayerMove>(); // เปลี่ยนชื่อคลาสให้ตรงของคุณ
+                PlayerMove playerScript = player.GetComponent<PlayerMove>();
                 if (playerScript != null)
                 {
                     playerScript.coinsCounter += 3;
                 }
             }
-
-            Destroy(collision.gameObject); // ทำลาย Enemy
-            Destroy(gameObject);           // ทำลาย Bullet
+            
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

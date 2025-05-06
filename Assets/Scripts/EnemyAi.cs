@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAi : MonoBehaviour
 {
     public float speed = 2f;
     private bool movingRight = true;
+    public GameObject hitEnemy;
+    public GameObject Player;
 
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hitEnemy.SetActive(false);
     }
 
     void Update()
@@ -25,6 +29,20 @@ public class EnemyAi : MonoBehaviour
         {
             Flip();
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            hitEnemy.SetActive(true);
+            Player.SetActive(false);
+        }
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);   
     }
 
     void Flip()
