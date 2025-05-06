@@ -1,16 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextLv : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void LoadNextLevel()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("GameLv2");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void QuitGame()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu"); // หรือ Application.Quit();
     }
 }

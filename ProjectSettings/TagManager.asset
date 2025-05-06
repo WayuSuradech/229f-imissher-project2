@@ -7,8 +7,9 @@ TagManager:
   - Coin
   - Enemy
   - Ground
-  - wallLayer
   - Wall
+  - Ball
+  - 'Finish '
   layers:
   - Default
   - TransparentFX

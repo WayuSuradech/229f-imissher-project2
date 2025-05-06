@@ -12,17 +12,17 @@ public class PlayerMove : MonoBehaviour
     public bool IsJumping;
     public int coinsCounter = 0;
     public Text coinText;
+    public GameObject finishPanel;
     private bool facingRight = false;
     Rigidbody2D rb2d;
     Vector2 moveInput;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        finishPanel.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
        if (Input.GetButton("Horizontal"))
@@ -80,6 +80,11 @@ public class PlayerMove : MonoBehaviour
         {
             coinsCounter += 1;
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Time.timeScale = 0f; // หยุดเวลา (เกมหยุด)
+            finishPanel.SetActive(true); // แสดง Finish Panel
         }
     }
 }
