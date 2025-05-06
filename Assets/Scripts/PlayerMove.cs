@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -50,6 +51,11 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             IsJumping = false;
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("ชนศัตรู! เริ่มเกมใหม่...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
