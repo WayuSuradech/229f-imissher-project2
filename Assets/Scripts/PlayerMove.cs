@@ -67,18 +67,13 @@ public class PlayerMove : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Coin")
         {
             coinsCounter += 1;
-            Destroy(other.gameObject); 
-        }
-        if (other.gameObject.tag == "Enemy")
-        {
-            coinsCounter += 3;
-            Destroy(other.gameObject); // ทำลาย Enemy
-            Destroy(gameObject);       // ทำลาย Bullet ตัวเอง
+            Destroy(other.gameObject);
         }
     }
 }
