@@ -31,6 +31,7 @@ public class Bullet : MonoBehaviour
                 if (playerScript != null)
                 {
                     playerScript.coinsCounter += 3;
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 3);
                 }
             }
             

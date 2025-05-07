@@ -8,9 +8,9 @@ public class NextLv : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameLv2");
     }
-    public void QuitGame()
+    public void GoMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); // หรือ Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }

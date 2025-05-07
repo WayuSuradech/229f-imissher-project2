@@ -7,15 +7,20 @@ using UnityEngine.SceneManagement;
 public class PlayerMove : MonoBehaviour
 {
     public float Speed;
-    private float move;
     public float JumpForce;
     public bool IsJumping;
+    private bool facingRight = false;
+    private Vector2 moveInput;
+    private Rigidbody2D rb2d;
+
+    [Header("Coin")]
     public int coinsCounter = 0;
     public Text coinText;
+
+    [Header("UI")]
     public GameObject finishPanel;
-    private bool facingRight = false;
-    Rigidbody2D rb2d;
-    Vector2 moveInput;
+    public Text levelCoinText;
+    public Text totalCoinText;
     
     void Start()
     {
@@ -45,7 +50,13 @@ public class PlayerMove : MonoBehaviour
        }
        coinText.text = coinsCounter.ToString();
     }
-
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -55,6 +66,7 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("ชนศัตรู! เริ่มเกมใหม่...");
+            PlayerPrefs.DeleteKey("TotalCoin");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -66,25 +78,22 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
         }
     }
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Coin")
         {
+            Debug.Log("เก็บเหรียญ: " + other.gameObject.name);
             coinsCounter += 1;
+            PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 1);
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Finish"))
         {
             Time.timeScale = 0f; // หยุดเวลา (เกมหยุด)
             finishPanel.SetActive(true); // แสดง Finish Panel
+            levelCoinText.text = "Your Coin In This Map is " + coinsCounter;
+            totalCoinText.text = "Total Coin: " + PlayerPrefs.GetInt("TotalCoin", 0);
         }
     }
 }

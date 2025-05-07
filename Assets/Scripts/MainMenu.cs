@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Start()
+    {
+        PlayerPrefs.SetInt("TotalCoin", 0);
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("GameLv1");
