@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Bullet : MonoBehaviour
 
 {
-    public AudioClip enemyHitSound;   // ใส่เสียงจาก Inspector
+    public AudioClip enemyHitSound;  
     private AudioSource audioSource;
 
     private void Start()
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // เล่นเสียง
+           
             if (audioSource != null && enemyHitSound != null)
             {
                 audioSource.PlayOneShot(enemyHitSound);

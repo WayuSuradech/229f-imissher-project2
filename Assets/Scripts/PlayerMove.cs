@@ -70,13 +70,13 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("ชนศัตรู! เริ่มเกมใหม่...");
+         
             PlayerPrefs.DeleteKey("TotalCoin");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (other.gameObject.CompareTag("Enemy1"))
         {
-            Debug.Log("ชนศัตรู! เริ่มเกมใหม่...");
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -93,7 +93,6 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-            Debug.Log("เก็บเหรียญ: " + other.gameObject.name);
             coinsCounter += 1;
             PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 1);
             Destroy(other.gameObject);
