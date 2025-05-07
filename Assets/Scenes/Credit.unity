@@ -591,7 +591,7 @@ Transform:
   m_GameObject: {fileID: 94454157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 1.37, z: 0}
+  m_LocalPosition: {x: -6.92, y: 1182, z: 0}
   m_LocalScale: {x: 0.0829, y: 0.0829, z: 0.0829}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1126,7 +1126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: -313}
+  m_AnchoredPosition: {x: -413, y: -300}
   m_SizeDelta: {x: 468, y: 208.3704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273824243
@@ -1160,6 +1160,10 @@ MonoBehaviour:
     -
     Simple 2D Platformer BE2
 
+    Thx Suno AI Gen Sound
+
+    Thx ChatGPT SubDev
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1187,8 +1191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1540,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.6171265, y: 44.057983}
+  m_AnchoredPosition: {x: 6.6171265, y: 887}
   m_SizeDelta: {x: -646.2142, y: -480.3742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &442621688
@@ -4368,7 +4372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65, y: -326}
+  m_AnchoredPosition: {x: -233, y: -326}
   m_SizeDelta: {x: -1857.4707, y: -760.7277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076596246
@@ -4535,7 +4539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -233.81}
+  m_AnchoredPosition: {x: -84, y: -197}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130054957
@@ -4558,16 +4562,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Suticha Buabang No.14
+  m_text: 'Suticha Buabang No.14       1660703883 Sec.229F
 
+    (Ui In Game)
 
-    Wayu Suradech No.28
+    Wayu
+    Suradech No.28         1660705920 Sec.229F
 
+    (Core Dev)
 
     Setthawat Bunchu
-    No.37
+    No.37      1660708106 Sec.229F
 
-'
+    (GameDesign,SubDev)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4608,7 +4615,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 20
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -4632,7 +4639,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -517.6876, w: 0}
+  m_margin: {x: 0, y: 0, z: -643.324, w: -185.55528}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
