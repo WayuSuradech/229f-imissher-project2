@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Finish"))
         {
-            Time.timeScale = 0f; 
+            Time.timeScale = 1f; 
             finishPanel.SetActive(true); 
             levelCoinText.text = "Your Coin In This Map is " + coinsCounter;
             totalCoinText.text = "Total Coin: " + PlayerPrefs.GetInt("TotalCoin", 0);
