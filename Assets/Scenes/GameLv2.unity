@@ -17930,7 +17930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1403bf88ecfd6429f1d6196d31c541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.5
+  Speed: 3
   JumpForce: 400
   IsJumping: 0
   audioSource: {fileID: 685468907}
