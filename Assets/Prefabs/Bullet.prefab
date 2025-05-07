@@ -165,5 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e03958d37d76844a87d1d94da0790db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsCounter: 0
-  coinText: {fileID: 0}
+  enemyHitSound: {fileID: 0}

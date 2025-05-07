@@ -5,6 +5,9 @@ public class Shooting : MonoBehaviour
     [SerializeField] Transform shootpoint;
     [SerializeField] GameObject target;
     [SerializeField] Rigidbody2D bulletPrefab;
+    
+    public AudioSource audioSource;        
+    public AudioClip shootSound;  
 
     void Update()
     {
@@ -22,6 +25,11 @@ public class Shooting : MonoBehaviour
                 Vector2 projectileVelocity = CalculateProjectileVelocity(shootpoint.position, hit.point, 0.35f);
                 Rigidbody2D shootBullet = Instantiate(bulletPrefab, shootpoint.position, Quaternion.identity);
                 shootBullet.linearVelocity = projectileVelocity;
+                
+                if (audioSource != null && shootSound != null)
+                {
+                    audioSource.PlayOneShot(shootSound);
+                }
             }
         }
     }

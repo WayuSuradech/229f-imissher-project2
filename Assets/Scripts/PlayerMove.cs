@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
+    [Header("Movement")]
     public float Speed;
     public float JumpForce;
     public bool IsJumping;
     private bool facingRight = false;
     private Vector2 moveInput;
     private Rigidbody2D rb2d;
+    
+    [Header("Sounds")]
+    public AudioSource audioSource;       
+    public AudioClip coinSound; 
 
     [Header("Coin")]
     public int coinsCounter = 0;
@@ -69,6 +74,11 @@ public class PlayerMove : MonoBehaviour
             PlayerPrefs.DeleteKey("TotalCoin");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (other.gameObject.CompareTag("Enemy1"))
+        {
+            Debug.Log("ชนศัตรู! เริ่มเกมใหม่...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -87,11 +97,16 @@ public class PlayerMove : MonoBehaviour
             coinsCounter += 1;
             PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 1);
             Destroy(other.gameObject);
+            
+            if (audioSource != null && coinSound != null)
+            {
+                audioSource.PlayOneShot(coinSound);
+            }
         }
         if (other.gameObject.CompareTag("Finish"))
         {
-            Time.timeScale = 0f; // หยุดเวลา (เกมหยุด)
-            finishPanel.SetActive(true); // แสดง Finish Panel
+            Time.timeScale = 0f; 
+            finishPanel.SetActive(true); 
             levelCoinText.text = "Your Coin In This Map is " + coinsCounter;
             totalCoinText.text = "Total Coin: " + PlayerPrefs.GetInt("TotalCoin", 0);
         }

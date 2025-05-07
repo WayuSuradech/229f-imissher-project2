@@ -2188,9 +2188,13 @@ MonoBehaviour:
   Speed: 0.5
   JumpForce: 400
   IsJumping: 0
+  audioSource: {fileID: 0}
+  coinSound: {fileID: 0}
   coinsCounter: 0
   coinText: {fileID: 0}
   finishPanel: {fileID: 0}
+  levelCoinText: {fileID: 0}
+  totalCoinText: {fileID: 0}
 --- !u!114 &307563023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,6 +2210,8 @@ MonoBehaviour:
   shootpoint: {fileID: 1945545216}
   target: {fileID: 0}
   bulletPrefab: {fileID: 7204717522492734904, guid: 73b14941cd3292d49a075f2fb97ef457, type: 3}
+  audioSource: {fileID: 0}
+  shootSound: {fileID: 0}
 --- !u!4 &307563027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6952628394585513801, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
@@ -8278,12 +8284,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -10975,7 +10981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 319}
+  m_AnchoredPosition: {x: 0, y: 222}
   m_SizeDelta: {x: 708.2568, y: 203.3468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984768860
@@ -10998,10 +11004,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GameName
+  m_text: Coin Quest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11031,7 +11037,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
